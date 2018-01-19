@@ -1,0 +1,41 @@
+version: '3'
+
+services:
+  openldap:
+    image: zentekmx/openldap:latest
+    container_name: openldap.tt
+    ports:
+    - "389:389"
+    volumes:
+    - ldap-volume:/var/lib/ldap:Z
+
+  postgres:
+    image: postgres:10.1
+    container_name: postgres.tt
+    ports:
+    - "5432:5432"
+    volumes:
+    - db-volume:/var/lib/postgresql/data:Z
+    environment:
+    - POSTGRES_USER=ztadmin
+    - POSTGRES_PASSWORD=secret
+    - POSTGRES_DB=redminedb
+
+  redmine:
+    image: redmine:3.4-passenger
+    container_name: redmine.tt
+    depends_on:
+    - openldap
+    - postgres
+    ports:
+    - "80:3000"
+    volumes:
+    - pm-volume:/usr/src/redmine/files:Z
+    environment:
+    - REDMINE_DB_USERNAME=ztadmin
+    - REDMINE_DB_PASSWORD=secret
+
+volumes:
+    ldap-volume:
+    db-volume:
+    pm-volume:
