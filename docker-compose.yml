@@ -18,7 +18,7 @@ services:
     - db-volume:/var/lib/postgresql/data:Z
     environment:
     - POSTGRES_USER=ztadmin
-    - POSTGRES_PASSWORD=4dm1nztdb
+    - POSTGRES_PASSWORD=secret
     - POSTGRES_DB=redminedb
 
   redmine:
@@ -33,7 +33,7 @@ services:
     - pm-volume:/usr/src/redmine/files:Z
     environment:
     - REDMINE_DB_USERNAME=ztadmin
-    - REDMINE_DB_PASSWORD=4dm1nztdb
+    - REDMINE_DB_PASSWORD=secret
 
 volumes:
     ldap-volume:
