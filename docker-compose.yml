@@ -1,17 +1,8 @@
 version: '3'
 
 services:
-  openldap:
-    image: zentekmx/openldap:latest
-    ports:
-    - "389:389"
-    volumes:
-    - ldap-volume:/var/lib/ldap:Z
-
   postgres:
-    image: postgres:10.1
-    ports:
-    - "5432:5432"
+    image: postgres:10
     volumes:
     - ${POSTGRES_VOLUME:-postgres-volume}:/var/lib/postgresql/data:Z
     environment:
@@ -22,7 +13,6 @@ services:
   redmine:
     image: bitnami/redmine:4
     depends_on:
-    - openldap
     - postgres
     ports:
     - "3000:3000"
@@ -43,6 +33,5 @@ services:
     - SMTP_PASSWORD=${SMTP_PASSWORD}
 
 volumes:
-    ldap-volume:
     postgres-volume:
     redmine-volume:
