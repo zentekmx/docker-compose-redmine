@@ -3,7 +3,6 @@ version: '3'
 services:
   openldap:
     image: zentekmx/openldap:latest
-    container_name: openldap.tt
     ports:
     - "389:389"
     volumes:
@@ -11,31 +10,39 @@ services:
 
   postgres:
     image: postgres:10.1
-    container_name: postgres.tt
     ports:
     - "5432:5432"
     volumes:
-    - db-volume:/var/lib/postgresql/data:Z
+    - ${POSTGRES_VOLUME:-postgres-volume}:/var/lib/postgresql/data:Z
     environment:
-    - POSTGRES_USER=ztadmin
-    - POSTGRES_PASSWORD=secret
-    - POSTGRES_DB=redminedb
+    - POSTGRES_USER=${POSTGRES_USER}
+    - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+    - POSTGRES_DB=${POSTGRES_DB}
 
   redmine:
-    image: redmine:3.4-passenger
-    container_name: redmine.tt
+    image: bitnami/redmine:4
     depends_on:
     - openldap
     - postgres
     ports:
-    - "80:3000"
+    - "3000:3000"
     volumes:
-    - pm-volume:/usr/src/redmine/files:Z
+    - ${REDMINE_VOLUME:-redmine-volume}:/bitnami:Z
     environment:
-    - REDMINE_DB_USERNAME=ztadmin
-    - REDMINE_DB_PASSWORD=secret
+    - REDMINE_DB_USERNAME=${POSTGRES_USER}
+    - REDMINE_DB_PASSWORD=${POSTGRES_PASSWORD}
+    - REDMINE_DB_NAME=${POSTGRES_DB}
+    - REDMINE_DB_POSTGRES=postgres
+    - REDMINE_DB_PORT_NUMBER=5432
+    - REDMINE_EMAIL=${REDMINE_EMAIL}
+    - REDMINE_USERNAME=${REDMINE_USERNAME}
+    - REDMINE_PASSWORD=${REDMINE_PASSWORD}
+    - SMTP_HOST=${SMTP_HOST}
+    - SMTP_PORT=${SMTP_PORT}
+    - SMTP_USER=${SMTP_USER}
+    - SMTP_PASSWORD=${SMTP_PASSWORD}
 
 volumes:
     ldap-volume:
-    db-volume:
-    pm-volume:
+    postgres-volume:
+    redmine-volume:
