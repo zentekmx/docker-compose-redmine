@@ -1,0 +1,28 @@
+# Simplified Chinese strings go here for Rails i18n
+# Author: Steven.W
+# Based on file: en.yml
+
+zh:
+  spent_time_title: "工时统计"
+  label_total_time: "总计工时"
+  label_new_entry: "新增工时项"
+  label_add_entry: "新增工时项"
+  weekend: "周末"
+  select_issues_option: "选择事务"
+  issue_not_exists: "事务不存在。"
+  select_project_option: "选择项目"
+  label_person: "用户"
+  label_interval: "间隔"    
+  permission_view_spent_time: "查看工时统计"
+  permission_view_others_spent_time: "查看其他人耗时"
+  permission_view_every_project_spent_time: "查看所有项目耗时"
+  time_entry_added_notice: "工时记录已添加。"
+  time_entry_updated_notice: "工时记录已更新。"
+  invalid_date_error: "非法日期格式。"
+  invalid_hours_error: "非法小时格式。"
+  not_allowed_error: "您不能在 '%{project}' 项目中记录工时信息。"
+  issue_not_in_project_error: "事务：#%{issue} 在 '%{project}' 项目中不存在！"
+  issue_not_found_error: "ID为 %{issue_id} 的事务不存在！"
+  cannot_find_project_error: "ID为 %{project_id} 的项目不存在！"
+  project_is_mandatory_error: "您必须选择一个项目！"
+  label_total_estimated_time: "总计预估时间"

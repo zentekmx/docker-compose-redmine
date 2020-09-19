@@ -1,0 +1,50 @@
+it:
+  label_plugin_xlse_legend_0: "Columns options"
+  label_plugin_xlse_legend_1: "Export options"
+  label_plugin_xlse_legend_1a: "Formato date"
+  label_plugin_xlse_legend_2: "Extra options"
+  label_plugin_xlse_legend_2_disabled: "Extra options (install rubyzip gem to access them)"
+
+  label_plugin_xlse_relations: "Esporta relazioni"
+  label_plugin_xlse_watchers: "Esporta osservatori"
+  label_plugin_xlse_description: "Esporta descrizione"
+  label_plugin_xlse_history: "Esporta storia"
+  label_plugin_xlse_time: "Esporta tempo impiegato"
+  label_plugin_xlse_attachments: "Lista allegati"
+  label_plugin_xlse_query_columns_only: "Esporta solo colonne selezionate"
+  label_plugin_xlse_group: "Dividi per criterio di raggruppamento"
+  label_plugin_xlse_generate_name: "Suggerisci nome di esportazione"
+  label_plugin_xlse_strip_html_tags: "Strip HTML tags"
+
+  label_plugin_xlse_export_status_histories: "Export status histories"
+
+  label_plugin_xlse_issues_limit: "Limite segnalazioni da esportare"
+  label_plugin_xlse_issues_limit_help: "0 - usa predefinito"
+  label_plugin_xlse_export_name: "Suffisso nome del file di esportazione"
+  
+  label_plugin_xlse_settings_title: "Dettagli esportazione"
+  label_plugin_xlse_button_export: "Esporta"
+  label_plugin_xlse_button_back: "Torna alle segnalazioni"
+  
+  label_plugin_xlse_field_attachment: "Allegati"
+  
+  label_plugin_xlse_export_format: "Esporta XLS:"
+  label_plugin_xlse_export_format_quick: "Rapido"
+  label_plugin_xlse_export_format_quick_tooltip: "Esporta usando le impostazioni standard"
+  label_plugin_xlse_export_format_detailed: "Dettagliato"
+  label_plugin_xlse_export_format_detailed_tooltip: "Scegli le opzioni prima di esportare"
+
+  field_history: "Storia"
+
+  label_plugin_xlse_date_created: "Creato"
+  label_plugin_xlse_date_updated: "Aggiornato"
+  label_plugin_xlse_date_start: "Inizio"
+  label_plugin_xlse_date_due: "Scadenza"
+  default_created_format: "dd.mm.yyyy hh:mm:ss"
+  default_updated_format: "dd.mm.yyyy hh:mm:ss"
+  default_start_date_format: "dd.mm.yyyy"
+  default_due_date_format: "dd.mm.yyyy"
+
+  plugin_xlse_field_issue_created_on: "Issue created"
+  plugin_xlse_field_status_from: "Status from"
+  plugin_xlse_field_status_to: "Status to"

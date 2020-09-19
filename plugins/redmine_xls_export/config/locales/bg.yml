@@ -1,0 +1,53 @@
+bg:
+  label_plugin_xlse_legend_0: "Опции за колоните"
+  label_plugin_xlse_legend_1: "Опции"
+  label_plugin_xlse_legend_1a: "Формат на датите"
+  label_plugin_xlse_legend_2: "Допълнителни опции"
+  label_plugin_xlse_legend_2_disabled: "Допълнителни опции (инсталирайте rubyzip gem за достъп до тях)"
+
+  label_plugin_xlse_relations: "Експорт на връзките"
+  label_plugin_xlse_watchers: "Експорт на наблюдателите"
+  label_plugin_xlse_description: "Експорт на описанията"
+  label_plugin_xlse_journal: "Експорт на събитията в задачите (журнал)"
+  label_plugin_xlse_time: "Експорт на употребеното време"
+  label_plugin_xlse_attachments: "Списък на прикачените файлове"
+
+  label_plugin_xlse_query_columns_only: "Експорт само на избраните колони"
+  label_plugin_xlse_group: "Разделяне по критерий за групиране"
+  label_plugin_xlse_generate_name: "Предполагане на името на експортния файл"
+  label_plugin_xlse_strip_html_tags: "Strip HTML tags"
+
+  label_plugin_xlse_export_attached: "Експорт на прикачените файлове"
+  label_plugin_xlse_separate_journals: "Журналите като отделни файлове"
+  label_plugin_xlse_export_status_histories: "Export status histories"
+
+  label_plugin_xlse_issues_limit: "Пренебрегване на максималния брой задачи за експорт"
+  label_plugin_xlse_issues_limit_help: "0 — по подразбиране"
+  label_plugin_xlse_issues_offset: "Експорт на задачи, стартирайки от"
+  label_plugin_xlse_export_name: "Разширение (суфикс) на експортния файл"
+  
+  label_plugin_xlse_settings_title: "Опции на експорта"
+  label_plugin_xlse_button_export: "Експортиране"
+  label_plugin_xlse_button_back: "Назад към задачите"
+  
+  label_plugin_xlse_field_attachment: "Прикачени файлове"
+  label_plugin_xlse_field_journal: "Журнал"
+  
+  label_plugin_xlse_export_format: "Експорт в XLS:"
+  label_plugin_xlse_export_format_quick: "Бързо"
+  label_plugin_xlse_export_format_quick_tooltip: "Експортиране с опции по подразбиране"
+  label_plugin_xlse_export_format_detailed: "Подробно"
+  label_plugin_xlse_export_format_detailed_tooltip: "Избор на опции преди експортиране"
+
+  label_plugin_xlse_date_created: "От дата"
+  label_plugin_xlse_date_updated: "Обновена"
+  label_plugin_xlse_date_start: "Начална дата"
+  label_plugin_xlse_date_due: "Крайна дата"
+  default_created_format: "dd.mm.yyyy hh:mm:ss"
+  default_updated_format: "dd.mm.yyyy hh:mm:ss"
+  default_start_date_format: "dd.mm.yyyy"
+  default_due_date_format: "dd.mm.yyyy"
+
+  plugin_xlse_field_issue_created_on: "Issue created"
+  plugin_xlse_field_status_from: "Status from"
+  plugin_xlse_field_status_to: "Status to"

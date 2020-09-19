@@ -1,0 +1,40 @@
+zh-TW:
+  label_plugin_xlse_relations: "導出關係"
+  label_plugin_xlse_watchers: "導出跟蹤者"
+  label_plugin_xlse_description: "導出描述"
+  label_plugin_xlse_time: "導出耗時"
+  label_plugin_xlse_attachments: "列出附件"
+  label_plugin_xlse_query_columns_only: "僅導出選中"
+  label_plugin_xlse_group: "依據分組條件分隔"
+  label_plugin_xlse_generate_name: "建議導出檔案名"
+
+  label_plugin_xlse_export_status_histories: "Export status histories"
+
+  label_plugin_xlse_issues_limit: "忽略導出大小限制"
+  label_plugin_xlse_issues_limit_help: "0 - 使用預設值"
+  label_plugin_xlse_export_name: "導出檔案名尾碼"
+  label_plugin_xlse_strip_html_tags: "Strip HTML tags"
+  
+  label_plugin_xlse_settings_title: "導出詳細"
+  label_plugin_xlse_button_export: "導出"
+  label_plugin_xlse_button_back: "返回問題列表"
+  
+  label_plugin_xlse_field_attachment: "附件"
+  label_plugin_xlse_export_format: "XLS導出:"
+  label_plugin_xlse_export_format_quick: "便捷"
+  label_plugin_xlse_export_format_quick_tooltip: "使用預設設置導出"
+  label_plugin_xlse_export_format_detailed: "詳情"
+  label_plugin_xlse_export_format_detailed_tooltip: "導出之前選擇配置"
+
+  label_plugin_xlse_date_created: "Created"
+  label_plugin_xlse_date_updated: "Updated"
+  label_plugin_xlse_date_start: "Start date"
+  label_plugin_xlse_date_due: "Due date"
+  default_created_format: "dd.mm.yyyy hh:mm:ss"
+  default_updated_format: "dd.mm.yyyy hh:mm:ss"
+  default_start_date_format: "dd.mm.yyyy"
+  default_due_date_format: "dd.mm.yyyy"
+
+  plugin_xlse_field_issue_created_on: "Issue created"
+  plugin_xlse_field_status_from: "Status from"
+  plugin_xlse_field_status_to: "Status to"
