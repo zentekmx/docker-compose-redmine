@@ -1,0 +1,50 @@
+== Redmine Q&A plugin changelog
+
+Redmine Q&A plugin
+Copyright (C) 2011-2020 RedmineUP
+https://www.redmineup.com/
+
+== 2020-03-03 v1.0.2
+
+* Redmine 4.1 support
+* Fixed section position bug 
+* Fixed MSSQL group by bug
+* Fixed "Help & Support" page layout 
+
+== 2019-08-23 v1.0.1
+
+* Accept answer links
+* Edit own answers permission
+* Redmine 4 support
+* Fixed sorting by unanswered question not working
+* Fixed project variable dismissed
+* Fixed status creating bug
+* Fixed preview link, empty project bug
+* Fixed boards migration bug
+
+== 2018-08-31 v1.0.0
+
+* Separate models for questions, answers and comments 
+* Voting for questions and answers 
+* Comments for questions and asnwers 
+* Section types: Question, Idea, Solution
+* Different main page styles 
+* Answered question status
+* Idea statutes
+* Chinese translation (zhoutt)
+
+== 2014-02-04 v0.0.6
+
+* Redmine 2.4 support
+* View count fixes for topic
+* Topic count fixed in boards view
+
+== 2013-05-28 v0.0.5
+
+* Redmine 2.3 support
+* Search by all words
+
+== 2013-01-20 v0.0.3
+
+* Redmine 2.2.0 support
+* License files

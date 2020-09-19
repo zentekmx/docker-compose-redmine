@@ -1,0 +1,40 @@
+== Redmine Resources plugin changelog
+
+Redmine Resources plugin - resource allocation and management for Redmine
+Copyright (C) 2011-2020 RedmineUP
+https://www.redmineup.com/
+
+== 2020-08-12 v1.0.4
+
+* Light version added 
+
+== 2020-07-20 v1.0.3
+
+* Added Week Plan chart
+* Show notes for project bookings
+* Added Italian locale
+* Chinese locale fixes 
+* Fixed global visibility bug
+* Fixed group assigned bug
+
+== 2019-12-19 v1.0.2
+
+* Added Ghost bookings for existed issues
+* Added notification setting
+* Redmine 4.1 compatibility fixes
+* Fixed drag and drop bug
+* Fixed bug with People plugin compatibility
+
+== 2019-05-31 v1.0.1
+
+* Ajax resource diagram editing
+* Issue dates frame validation
+* Booking bar splitting 
+
+== 2019-02-14 v1.0.0
+
+* Initial release 
+* Resource allocation diagram 
+* Global workday length setting
+* Weekends handling 
+* My page personal Resources allocation widget
