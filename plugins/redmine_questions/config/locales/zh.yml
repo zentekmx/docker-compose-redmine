@@ -1,0 +1,31 @@
+# encoding: utf-8
+# Simplified Chinese strings go here for Rails i18n
+# Author: Salivaxiu@163.com
+# Based on file: en.yml
+zh:
+  label_questions: '帮助与支持'
+  label_questions_search: '搜索特定的问题或回答或帖子...'
+  label_questions_new: 新问答
+  label_questions_message: 消息
+  label_questions_added_time: "在 %{value} 之前增加"
+  label_questions_related_messages: 相关的消息
+  label_questions_latest_messages: 最后的消息
+  label_questions_views: '显示 %{count} 次'
+  label_questions_votes: '投票 %{count} 次'
+  label_questions_answers: '回答 %{count} 次'
+  label_questions_tags: 标签
+  label_questions_tagged_by: '%{count} 个主题包含标签 %{tag}'
+  label_questions_sidebar_message: 侧边栏信息
+  label_questions_notice: 通知
+  label_questions_most_voted: 大多数投票
+
+  button_questions_vote: 投票
+  button_questions_unvote: 取消投票
+  button_questions_like: 喜欢
+  button_questions_unlike: 不喜欢
+
+  field_questions_tags: 标签
+
+  permission_view_questions: 查看帮助和支持
+  permission_edit_messages_tags: 编辑标签
+  permission_edit_vote_messages: 投票消息

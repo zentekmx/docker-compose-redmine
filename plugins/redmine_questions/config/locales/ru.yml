@@ -1,0 +1,99 @@
+# Russian strings go here for Rails i18n
+# encoding: utf-8
+# English strings go here for Rails i18n
+ru:
+  label_questions: 'Вопросы/Ответы'
+  label_questions_search: 'Поиск вопросов и ответов ...'
+  label_questions_new: Новая тема
+  label_questions_message: Сообщение
+  label_questions_added_time: "Добавлена %{value} назад"
+  label_questions_related_questions: Связанные вопросы
+  label_questions_latest_messages: Последние сообщения
+  label_questions_views: '%{count} просмотров'
+  label_questions_votes: '%{count} голосов'
+  label_questions_answers: '%{count} ответов'
+  label_questions_tags: Тэги
+  label_questions_tagged_by: '%{count} тем с тэгом %{tag}'
+  label_questions_sidebar_message: Сообщение справа
+  label_questions_notice: Информация
+  label_questions_most_voted: Больше голосов
+
+  button_questions_vote: Голосовать
+  button_questions_unvote: Отменить голос
+  button_questions_like: Like
+  button_questions_unlike: Unlike
+
+  field_questions_tags: Тэги
+
+
+  label_questions_add_comment: Комментировать
+  label_question_comment_successful_added: Комментарий добавлен
+  label_question_successful_update: Вопрос обновлен
+  label_answer_successful_update: Ответ обновлен
+  label_answer_successful_added: Ответ добавлен
+  lebel_questions_new_comment: Новый комментарий
+
+  button_questions_to_issue: Конв. в задачу
+  button_questions_issue_to_question: Конв. в вопрос
+  label_questions_actions: Действия
+  label_questions_accept: Принять
+
+  label_questions_section_type_questions: Вопросы
+  label_questions_section_type_solutions: Решения
+  label_questions_section_type_ideas: Идеи
+
+  label_questions_section: Раздел
+  label_questions_sections_plural: Разделы
+  label_questions_section_new: Новый раздел
+  label_questions_section_type: Тип раздела
+  label_questions_featured: Выделено
+  label_questions_locked: Заблокировано
+
+  project_module_questions: Вопросы/Ответы
+
+  label_questions_comment: Комментарий
+  label_questions_your_answer: Ваш ответ
+  label_questions_answer_plural: Оветы
+  label_questions_x_votes:
+        one:   "голос"
+        few:   "голоса"
+        many:  "голосов"
+        other: "голоса"
+  label_questions_wasthishelpful: Полезно ли Вам было?
+
+  label_question_plural: Вопросы
+  label_questions_related_solutions: Связанные решения
+  label_questions_section_edit: Редактировать раздел
+  label_soluition_plural: Решения
+  label_questions_add_tag: '+ добавить тэг'
+  label_questions_vote_added: Голос добавлен
+  label_questions_vote_removed: Голос удален
+  label_questions_vote_own: Голосовать за свои вопросы
+  label_questions_show_popular: Показыть популярные вопросы на списке секций
+  label_questions_most_popular: Популярные
+  label_questions_status_plural: Статусы идеи
+  label_questions_status_closed: Закрыто
+  label_questions_status_new: Новый статус
+  label_questions_newest: Новейшие
+  label_questions_active: Активные
+  label_questions_voted: Голоса
+  label_questions_unanswered: Неотвеченные
+
+  permission_view_questions: Просматривать вопросы ответы
+  permission_create_tags: Создавать тэги
+  permission_edit_vote_messages: Голосовать
+  permission_add_answers: Добавить ответы
+  permission_delete_answers: Удалить ответы
+  permission_edit_question_comments: Редактировать комментарии
+  permission_edit_own_question_comments: Редактировать свои комментарии
+  permission_comment_question: Добавить комментарии
+  permission_add_questions: Добавить вопросы
+  permission_edit_questions: Редактировать вопросы
+  permission_edit_own_questions: Редактировать свои вопросы
+  permission_delete_questions: Удалить вопросы
+  permission_vote_questions: Голосовать за вопросы
+  permission_accept_answers: Принимать ответы
+  permission_manage_sections: Управлять секциями
+  permission_create_tags: Создавать новые тэги
+  label_questions_discard: Не принимать
+  permission_edit_own_answers: Редактировать свои ответы

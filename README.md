@@ -1,2 +1,2 @@
 # docker-compose-redmine
-Docker compose for redmine at https://www.redmine.org
+Docker compose for redmine with convenient plugins at https://www.redmine.org

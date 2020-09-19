@@ -1,0 +1,25 @@
+<% @sections.group_by(&:project).each do |project, sections| %>
+  <% if @project.blank? %>
+    <div class="project-forums">
+      <h3>
+        <%= project.name %>
+        <%= link_to " \xc2\xbb", project_questions_sections_path(project_id: project.identifier) %>
+      </h3>
+    </div>
+  <% end %>
+
+  <div class="section-list">
+    <% sections.each do |section| %>
+      <a id="section_<%= section.id %>" class="section-tile"
+         href="<%= url_for({ controller: "questions", action: 'index', section_id: section, project_id: section.project }) %>">
+        <h4>
+          <%= section.name %>
+          <span class="topic-count"><%= "(#{section.questions_count})" %></span>
+        </h4>
+        <div class="description">
+          <%= section.description %>
+        </div>
+      </a>
+    <% end %>
+  </div>
+<% end %>

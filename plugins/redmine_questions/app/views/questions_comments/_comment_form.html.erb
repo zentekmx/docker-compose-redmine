@@ -1,0 +1,7 @@
+  <% if question_item.commentable? %>
+    <%= form_tag({:controller => 'questions_comments', :action => 'create', :id => question_item, :source_id =>  question_item, :source_type => question_item.class.name.underscore}, :class => "add-comment-form", :remote => true) do %>
+          <%= text_area 'comment', @comment.respond_to?(:content) ? 'content' : 'comments', :cols => 80, :rows => 5, :id => "comments_for_#{question_item.class.name.underscore}_#{question_item.id}" %>
+        <%= submit_tag l(:button_add), :class => "button-small" %>
+        <%= link_to l(:button_cancel), {}, :onclick => "$('#add_#{question_item.class.name.underscore}_comments_#{question_item.id}').hide(); return false;" %>
+    <% end %>
+  <% end %>

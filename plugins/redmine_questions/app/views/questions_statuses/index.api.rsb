@@ -1,0 +1,10 @@
+api.array :questions_statuses do
+  @questions_statuses.each do |status|
+    api.questions_status do
+      api.id status.id
+      api.name status.name
+      api.color status.color
+      api.is_closed status.is_closed
+    end
+  end
+end

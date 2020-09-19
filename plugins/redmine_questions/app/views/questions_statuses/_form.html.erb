@@ -1,0 +1,14 @@
+<%= error_messages_for 'questions_status' %>
+
+<div class="box tabular">
+<p><%= f.text_field :name, :required => true %></p>
+<p><%= f.select :color, options_for_select(QuestionsSettings::IDEA_COLORS, @questions_status.color), {:label => l(:field_color)} %></p>
+<p><%= f.check_box :is_closed, :label => :label_questions_status_closed %></p>
+
+</div>
+
+<%= javascript_tag "$('#questions_status_color').simplecolorpicker({picker: true});"%>
+<% content_for :header_tags do %>
+  <%= javascript_include_tag 'jquery.simplecolorpicker.js', :plugin => "redmine_questions" %>
+  <%= stylesheet_link_tag 'jquery.simplecolorpicker.css', :plugin => 'redmine_questions' %>
+<% end %>

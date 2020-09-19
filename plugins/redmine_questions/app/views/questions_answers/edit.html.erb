@@ -1,0 +1,12 @@
+
+<h2><%= avatar(@answer.author, :size => "24") %><%=h @answer.question.subject %></h2>
+
+<%= form_for @answer, :as => :answer, :url => questions_answer_path(@answer), :html => {:multipart => true, :id => 'answer-form', :method => :put} do |f| %>
+  <%= back_url_hidden_field_tag %>
+  <%= render :partial => 'form', :locals => {:f => f} %>
+  <%= submit_tag l(:button_save) %>
+  <%= preview_link(preview_questions_answers_path(@answer), 'answer-form') if Redmine::VERSION.to_s <= '3.4.5' %>
+  | <%= link_to l(:button_cancel), question_path(@answer.question, :anchor => "question_item_#{@answer.id}") %>
+<% end %>
+<div id="preview" class="wiki"></div>
+

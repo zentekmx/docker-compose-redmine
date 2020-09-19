@@ -1,0 +1,6 @@
+<%= question_breadcrumb @question_item %>
+
+  
+<%= render :partial => 'question' if QA_VERSION_TYPE.match(/Light/) %> 
+ 
+<% html_title @question_item.subject %>

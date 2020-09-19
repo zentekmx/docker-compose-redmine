@@ -1,0 +1,16 @@
+comment_001:
+  comments: text for cooment 001
+  commented_type: Question
+  commented_id: 1
+  author_id: 1
+comment_002:
+  comments: text for cooment 002
+  commented_type: Question
+  commented_id: 2
+  author_id: 1
+comment_003:
+  comments: text for cooment 003 (comment for answer!)
+  commented_type: Question
+  commented_id: 5
+  author_id: 1
+

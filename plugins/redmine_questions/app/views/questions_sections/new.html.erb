@@ -1,0 +1,11 @@
+<h2><%=l(:label_questions_section_new)%></h2>
+
+<%= labelled_form_for((@project ? [@project, @section] : @section), :html => {:class => 'tabular'}) do |f|%>
+  <div class="box tabular">
+    <%= back_url_hidden_field_tag %>
+    <%= render :partial => 'form', :locals => { :f => f} %>
+  </div>
+  <p>
+    <%= f.submit l(:button_create) %>
+  </p>
+<% end %>

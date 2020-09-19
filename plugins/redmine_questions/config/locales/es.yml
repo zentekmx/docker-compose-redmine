@@ -1,0 +1,27 @@
+es:
+  label_questions: 'Ayuda y Soporte'
+  label_questions_search: 'Buscar una pregunta, respuesta o tópico...'
+  label_questions_new: Nueva pregunta
+  label_questions_message: Mensaje
+  label_questions_added_time: "Agregado hace %{value}"
+  label_questions_related_questions: Mensajes relacionados
+  label_questions_latest_messages: Últimos mensajes
+  label_questions_views: '%{count} vistas'
+  label_questions_votes: '%{count} votos'
+  label_questions_answers: '%{count} respuestas'
+  label_questions_tags: Etiquetas
+  label_questions_tagged_by: '%{count} tópico(s) etiquetado como %{tag}'
+  label_questions_notice_message: Mensaje noticia
+  label_questions_notice: Noticia
+  label_questions_most_voted: Más votados
+
+  button_questions_vote: Votar
+  button_questions_unvote: Quitar Voto
+  button_questions_like: Me gusta
+  button_questions_unlike: Ya no me gusta
+
+  field_questions_tags: Etiquetas
+
+  permission_view_questions: Ver Ayuda y Soporte
+  permission_edit_messages_tags: Editar etiquetas
+  permission_edit_vote_messages: Votar mensajes

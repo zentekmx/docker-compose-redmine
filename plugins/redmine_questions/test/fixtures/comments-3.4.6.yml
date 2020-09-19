@@ -1,0 +1,17 @@
+_fixture:
+  model_class: Comment
+comment_001:
+  content: text for cooment 001
+  commented_type: Question
+  commented_id: 1
+  author_id: 1
+comment_002:
+  content: text for cooment 002
+  commented_type: Question
+  commented_id: 2
+  author_id: 1
+comment_003:
+  content: text for cooment 003 (comment for answer!)
+  commented_type: Question
+  commented_id: 5
+  author_id: 1

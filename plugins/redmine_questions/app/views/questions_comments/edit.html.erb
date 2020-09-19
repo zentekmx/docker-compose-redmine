@@ -1,0 +1,12 @@
+
+<h2><%= avatar(@comment.author, :size => "24") %></h2>
+<%= form_tag({:controller => 'questions_comments', :action => 'update', :source_id => @comment_source, :source_type => @comment_source.class.name.underscore, :id => @comment, :method => :put}) do %>
+  
+  <div class="box">
+      <%= text_area 'comment', 'comments', :cols => 80, :rows => 5%>
+  </div>
+  
+  <p><%= submit_tag l(:button_update) %></p>
+
+<% end %>
+<div id="preview" class="wiki"></div>

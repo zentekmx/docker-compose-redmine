@@ -1,0 +1,43 @@
+<% @project_sections = QuestionsSection.for_project(@project).sorted %>
+<h3><%= l(:label_questions_sections_plural) %></h3>
+
+<% if @project_sections.any? %>
+  <table class="list questions_sections">
+    <thead>
+      <tr>
+      <th><%= l(:field_name) %></th>
+      <th><%=l(:field_type)%></th>
+      <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @project_sections.each do |section| %>
+        <tr class="<%= cycle 'odd', 'even' %>">
+          <td class="name">
+            <%= h(section.name) %>
+          </td>
+          <td>
+            <%= section.l_type %>
+          </td>
+          <td class="buttons">
+            <% if User.current.allowed_to?(:manage_sections, @project) %>
+              <%= reorder_handle(section, url: project_questions_section_path(@project, section), param: 'questions_section') if respond_to?(:reorder_handle) %>
+              <%= link_to l(:button_edit), edit_questions_section_path(section, project_id: @project), class: 'icon icon-edit' %>
+              <%= delete_link questions_section_path(section, project_id: @project) %>
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% else %>
+  <p class="nodata"><%= l(:label_no_data) %></p>
+<% end %>
+
+<% if User.current.allowed_to?(:manage_sections, @project) %>
+  <%= link_to image_tag('add.png', style: 'vertical-align: middle;') + l(:label_questions_section_new), new_questions_section_path(project_id: @project) %>
+<% end %>
+
+<%= javascript_tag do %>
+  $(function() { $("table.questions_sections tbody").positionedItems(); });
+<% end if respond_to?(:reorder_handle) %>

@@ -1,0 +1,43 @@
+<%= error_messages_for @question_item %>
+<%= fields_for :question, @question_item do |f| %>
+<div class="box">
+  <!--[form:message]-->
+  <p><label for="message_subject"><%= l(:field_subject) %></label><br />
+    <%= f.text_field :subject, :id => "question_subject", :size => 120%>
+  </p>
+  <p><label><%= l(:label_questions_section) %></label><br />
+    <%= f.select :section_id, options_from_collection_for_select(QuestionsSection.where(:project_id => @project).sorted, :id, :name, f.object.section_id), :style => "width: 80%;", :required => true %>
+    <%= javascript_tag do %>
+      $('#question_section_id').change(function() {
+        $.ajax({
+          url: '<%= escape_javascript update_form_questions_path(:id => @question_item, :format => 'js', :project_id => @project) %>',
+          type: 'put',
+          data: $('#question_form').serialize()
+        });
+      });
+    <% end %>
+    <%= link_to(image_tag('add.png', :style => 'vertical-align: middle;'),
+          (@project ? new_project_questions_section_url(:project_id => @project) : new_questions_section_url ),
+          :remote => true,
+          :method => 'get',
+          :title => l(:label_questions_section_new),
+          :class => "add_section",
+          :tabindex => 200) if  User.current.allowed_to?(:manage_sections, @project) %>
+  </p>
+  <% if @question_item.is_idea? %>
+  <p><label><%= l(:field_status) %></label><br />
+    <%= f.select :status_id, options_from_collection_for_select(QuestionsStatus.sorted,:id, :name, @question_item.status_id ), :include_blank => true %>
+  </p>
+  <% end %>
+  <p>
+    <%= f.text_area :content, :cols => 80, :rows => 15, :class => 'wiki-edit', :id => 'question_content', :label => l(:label_questions_message) %>
+  </p>
+  <%= wikitoolbar_for 'question_content' %>
+  <!--[eoform:question]-->
+
+  <p>
+    <%= l(:label_attachment_plural) %><br />
+    <%= render :partial => 'attachments/form', :locals => {:container => @question_item} %>
+  </p>
+</div>
+<% end %>

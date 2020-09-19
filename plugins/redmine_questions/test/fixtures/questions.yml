@@ -1,0 +1,26 @@
+question_001:
+  id: 1
+  subject: Hard question
+  content: Text for hard question
+  author_id: 1
+  section_id: 1
+question_002:
+  id: 2
+  subject: Another hard question
+  content: Text for Another hard question
+  author_id: 2
+  section_id: 1
+  featured: true
+question_003:
+  id: 3
+  subject: Simple question
+  content: Text for simple question
+  author_id: 1
+  section_id: 2
+question_004:
+  id: 4
+  subject: Another hard question
+  content: Text for simple hard question
+  author_id: 2
+  section_id: 2
+  locked: true

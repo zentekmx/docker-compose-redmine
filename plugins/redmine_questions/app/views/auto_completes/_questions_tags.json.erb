@@ -1,0 +1,6 @@
+<%= raw @questions_tags.map { |question_tag| {
+        'id' => @names_only ? question_tag.name : question_tag.id,
+        'text' => question_tag.name
+      }
+    }.to_json
+%>

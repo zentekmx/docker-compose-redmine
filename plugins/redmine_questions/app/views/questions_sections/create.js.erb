@@ -1,0 +1,8 @@
+hideModal();
+<% select = content_tag('select', content_tag('option') +  options_from_collection_for_select(QuestionsSection.where(:project_id => @project), :id, :name, @section.id.to_s), :id => 'question_section_id', :name => 'question[section_id]') %>
+$('#question_section_id').replaceWith('<%= escape_javascript(select) %>');
+$.ajax({
+          url: '<%= escape_javascript update_form_questions_path(:id => @question_item, :format => 'js', :project_id => @project) %>',
+          type: 'put',
+          data: $('#question_form').serialize()
+        });

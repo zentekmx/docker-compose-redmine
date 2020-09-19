@@ -1,0 +1,6 @@
+tag_hard:
+  id: 1
+  name: hard
+tag_simple:
+  id: 2
+  name: simple

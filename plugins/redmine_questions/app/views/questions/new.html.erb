@@ -1,0 +1,12 @@
+<h2><%= l(:label_message_new) %></h2>
+
+<%= form_for @question_item, { :url => project_questions_path(@project, {}), :html => {:multipart => true,
+  :id => 'question_form'}} do |f| %>
+  <div id="all_attributes">
+  	<%= render partial: 'form', locals: { f: f } %>
+  </div>
+  <%= submit_tag l(:button_create) %>
+  <% preview_link({ controller: 'questions', action: 'preview', id: @question_item }, 'question_form') if Redmine::VERSION.to_s <= '3.4.5' %>
+<% end %>
+
+<div id="preview" class="wiki"></div>

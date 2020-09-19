@@ -11,7 +11,10 @@ services:
     - POSTGRES_DB=${POSTGRES_DB}
 
   redmine:
-    image: bitnami/redmine:4
+    #image: bitnami/redmine:4.1.1
+    build:
+      context: .
+      dockerfile: Dockerfile
     depends_on:
     - postgres
     ports:

@@ -1,0 +1,11 @@
+<div class="contextual">
+	<% if question_item.editable_by?(User.current) %>
+  	<%= link_to(l(:button_edit), edit_questions_answer_path(question_item), :class => 'icon icon-edit')  %>
+  <% elsif User.current.allowed_to?(:accept_answers, @project) && !question_item.accepted? %>
+  	<%= link_to(l(:label_questions_accept), questions_answer_path(question_item, answer: {accepted: true}), method: :put, :class => 'icon icon-accept')  %>
+	<% elsif User.current.allowed_to?(:accept_answers, @project) && question_item.accepted? %>  	
+  	<%= link_to(l(:label_questions_discard), questions_answer_path(question_item, answer: {accepted: false}), method: :put, :class => 'icon icon-discard')  %>
+  <% end %>
+  <%= link_to(l(:button_delete), questions_answer_path(question_item), :method => :delete, :data => {:confirm => l(:text_are_you_sure)}, :class => 'icon icon-del') if question_item.destroyable_by?(User.current)
+    %>
+</div>

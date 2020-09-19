@@ -1,0 +1,65 @@
+<div class="contextual">
+    <%= content_tag('span', watcher_link(@question_item, User.current), :id => 'watcher') %>
+    <%= link_to(l(:button_edit), edit_question_path(@question_item), :class => 'icon icon-edit' ) if @question_item.editable_by?(User.current)
+    %>
+    <%= link_to(l(:button_delete), question_path(@question_item), :method => :delete, :data => {:confirm => l(:text_are_you_sure)}, :class => 'icon icon-del') if @question_item.destroyable_by?(User.current)
+    %>
+</div>
+
+<h1 class="question-title"><%=h @question_item.subject %></h1>
+<%= render :partial => 'question_item', :object => @question_item %>
+
+<% if @question_item.section.allow_answering? %>
+  <div id="answers">
+  <% if  @answers.any? %>
+    <h3><%= l(:label_questions_answer_plural) %> (<%= @answer_count %>)</h3>
+    <% @answers.each do |answer| %>
+      <%= render :partial => 'questions_answers/answer_item', :locals => { :question_item => answer } %> 
+    <% end %>
+    <span class="pagination"><%= pagination_links_full @answer_pages, @answer_count %></span>
+  <% end %>
+
+  <% if @question_item.allow_answering? && User.current.allowed_to?(:add_answers, @project) %>
+    <h3><%= l(:label_questions_your_answer) %></h3>
+    <div id="reply" >
+      <%= form_for @answer, :as => :answer, :url => question_answers_path(@question_item), :html => {:multipart => true, :id => 'answer-form'} do |f| %>
+        <%= render :partial => 'questions_answers/form', :locals => {:f => f, :replying => true} %>
+        <%= submit_tag l(:button_submit) %>
+      <% end %>
+      <div id="preview" class="wiki"></div>
+    </div>
+  <% end %>
+  </div>
+<% end %>
+
+<% content_for :sidebar do %>
+  <h3><%= l(:label_questions_message) %></h3>
+  <ul class="question-meta">
+    <li class="views icon icon-view">
+      <%= l(:label_questions_views, :count => @question_item.views ) %>
+    </li>
+  </ul>
+
+  <% if @question_item.convertable_by?(User.current) && User.current.allowed_to?(:add_issues, @project) %>
+  <h3><%= l(:label_questions_actions) %></h3>
+  <ul class="action">
+    <li>
+      <%= link_to(
+          l(:button_questions_to_issue),
+          convert_to_issue_project_question_path(@project, @question_item)
+        )
+      %>
+    </li>
+  </ul>
+  <% end %>
+
+  <h3><%= l(:label_questions_related_questions) %></h3>
+  <ul class="related-topics">
+    <% Question.visible.related(@question_item, 5).each do |question| %>
+      <li class="related-topic">
+        <%= link_to h(question.subject), { :controller => 'questions', :action => 'show', :board_id => nil, :id => question } %>
+      </li>
+    <% end %>
+  </ul>
+
+<% end %>

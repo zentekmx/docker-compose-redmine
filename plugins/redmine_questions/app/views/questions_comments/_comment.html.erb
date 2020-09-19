@@ -1,0 +1,27 @@
+<div class="comment" id="comment_<%= comment.id %>">
+<div class="contextual">
+  <%= link_to(
+        "",
+        {:controller => 'questions_comments', :action => 'edit', :source_id => comment.commented, :source_type => comment.commented.class.name.underscore, :id => comment.id},
+        :class => 'icon icon-edit',
+        :method => :get
+      ) if (User.current.allowed_to?(:edit_question_comments, comment.commented.project) || (comment.author == User.current && User.current.allowed_to?(:edit_own_question_comments, comment.commented.project)))
+  %>
+  <%= link_to(
+      "",
+      {:controller => 'questions_comments', :action => 'destroy', :source_id => comment.commented, :id => comment, :source_type => comment.commented.class.name.underscore}, :class => 'icon icon-del',
+        :data => {:confirm => l(:text_are_you_sure)},
+        :method => :delete,
+        :title => l(:button_delete)
+      ) if (User.current.allowed_to?(:edit_question_comments, comment.commented.project) || (comment.author == User.current && User.current.allowed_to?(:edit_own_question_comments, comment.commented.project)))
+  %>
+</div>
+  <div class="author">
+    <%= link_to_user comment.author %>
+    <%= time_tag(comment.created_on) %>
+  </div>
+  <div class="wiki-content">
+    <%= textilizable(comment.comments) %>
+  </div>
+</div>
+

@@ -1,0 +1,8 @@
+<h3 class="title"><%=l(:label_questions_section_new) %></h3>
+
+<%= labelled_form_for((@project ? [@project, @section] : @section), :remote => true, :html => {:class => 'tabular'}) do |f|%>
+    <%= render :partial => 'form', :locals => { :f => f} %>
+  <p>
+      <%= f.submit l(:button_create) %>
+    </p>
+<% end %>

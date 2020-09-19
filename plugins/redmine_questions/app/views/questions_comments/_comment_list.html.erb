@@ -1,0 +1,12 @@
+<% if question_item.comments.any? %>
+<div class="question-comments">
+  <% question_item.comments.each do |comment| %>
+    <% next if comment.new_record? %>
+    <%= render :partial => "questions_comments/comment", :locals => {:comment => comment, :comment_source => question_item} %>
+  <% end %>
+</div>
+<% end %>
+
+<div class="add_comments" id="add_<%= question_item.class.name.underscore %>_comments_<%= question_item.id %>" style="display:none;">
+  <%= render :partial => "questions_comments/comment_form", :locals => {:question_item => question_item} %>
+</div>

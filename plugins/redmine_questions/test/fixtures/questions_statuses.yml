@@ -1,0 +1,10 @@
+section_001:
+  id: 1
+  name: Open
+  color: green
+  is_closed: false
+section_002:
+  id: 2
+  name: Closed
+  color: red
+  is_closed: true

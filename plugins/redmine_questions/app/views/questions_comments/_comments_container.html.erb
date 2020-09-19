@@ -1,0 +1,7 @@
+<% if question_item.commentable? %>
+    <%= link_to l(:label_questions_comment), "#", :onclick => "$('#add_comments_#{question_item.id}').toggle(); showAndScrollTo('add_#{question_item.class.name.underscore}_comments_#{question_item.id}', 'comments_for_#{question_item.class.name.underscore}_#{question_item.id}'); return false;", :class => 'icon icon-comment add-comment-link' %>
+<% end %>
+
+<div class="comments_container">
+  <%= render :partial => 'questions_comments/comment_list', :locals => {:question_item => question_item} %>
+</div>

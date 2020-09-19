@@ -1,0 +1,18 @@
+<%
+  @popular_topics = Question.
+                      visible.
+                      in_project(@project).
+                      in_section(@section).
+                      positive.
+                      by_views.
+                      by_votes.
+                      limit(5)
+%>
+<h3><%= l(:label_questions_most_popular) %></h3>
+<ul class="related-topics">
+  <% @popular_topics.each do |question| %>
+  <li class="related-topic">
+    <%= link_to h(question.subject), { :controller => 'questions', :action => 'show', :section_id => question.section, :id => question } %>
+  </li>
+  <% end unless @popular_topics.blank? %>
+</ul>

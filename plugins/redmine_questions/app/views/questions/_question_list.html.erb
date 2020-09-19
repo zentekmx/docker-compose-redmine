@@ -1,0 +1,47 @@
+<% if @question_items && @question_items.any? %>
+  <% unless params[:tag].blank? %>
+    <div class="title-bar">
+      <h4><%= l(:label_questions_tagged_by, :count => @question_items.size, :tag => params[:tag]) %></h4>
+    </div>
+  <% end %>
+
+  <div id="forum_list">
+    <div id="topics_container" class="<%= " votable" if @section && @section.allow_voting? %>">
+      <% @question_items.each do |question| %>
+        <div class="topic">
+          <% if @section && @section.allow_voting? %>
+          <div class="topic-vote">
+            <span class="vote-score"><%= question.weighted_score %></span>
+            <label><%= l(:label_questions_x_votes, :count => question.weighted_score.abs) %></label>
+            <% if question.answered? %>
+            <div class="status-answered" title="Answered"></div>
+            <% end %>
+          </div>
+          <% end %>
+          <div class="topic-content">
+            <h3 class="subject">
+              <%= link_to h(question.subject), { :controller => 'questions', :action => 'show', :project_id => question.project, :id => question } %>
+              <%= question_status_tag(question.status) %>
+            </h3>
+            <p><%= truncate(Question.to_text(textilizable(question.content)), :length => 100) %></p>
+            <ul class="meta">
+                <% if question.allow_answering? %>
+                <li class="answers icon icon-comment"><%= l(:label_questions_answers, :count => question.answers_count) %></li>
+                <% end %>
+                <li class="views icon icon-view"><%= l(:label_questions_views, :count => question.views ) %></li>
+            </ul>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+  <% if @topic_pages %>
+    <% params[:controller] = 'questions'
+       params[:action] = 'topics'
+     %>
+    <p class="pagination"><%= pagination_links_full @topic_pages, @topic_count %></p>
+  <% end %>
+<% else %>
+  <p style="display: inline-block"></p>
+  <p class="nodata"><%= l(:label_no_data) %></p>
+<% end %>

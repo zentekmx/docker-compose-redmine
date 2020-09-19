@@ -1,0 +1,5 @@
+<h1><%= @question.section_name %>: <%= link_to(@question.subject, @question_url) %></h1>
+
+<p><%= l(:text_user_wrote, :value => h(@comment.author)) %></p>
+
+<%= textilizable @comment, :comments, :only_path => false %>

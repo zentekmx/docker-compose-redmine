@@ -1,0 +1,18 @@
+answer_001:
+  id: 1
+  content: This is answer for question_001
+  question_id: 1
+  author_id: 2
+  accepted: true
+answer_002:
+  id: 2
+  content: This is answer for question_002
+  question_id: 2
+  author_id: 1
+  accepted: false
+answer_003:
+  id: 3
+  content: This is a second answer for question_001
+  question_id: 1
+  author_id: 3
+  accepted: false  

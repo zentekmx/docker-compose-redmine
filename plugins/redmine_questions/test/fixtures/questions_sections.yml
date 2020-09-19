@@ -1,0 +1,25 @@
+section_001:
+  id: 1
+  name: FAQ
+  section_type: questions
+  project_id: 1
+section_002:
+  id: 2
+  name: Ideas
+  section_type: ideas
+  project_id: 2
+section_003:
+  id: 3
+  name: Global FAQ
+  section_type: questions
+  project_id: 1
+section_004:
+  id: 4
+  name: Off topic
+  section_type: questions
+  project_id: 1
+section_005:
+  id: 5
+  name: Ideas in project 1
+  section_type: ideas
+  project_id: 1

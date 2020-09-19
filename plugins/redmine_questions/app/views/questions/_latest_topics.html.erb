@@ -1,0 +1,8 @@
+<h3><%= l(:label_questions_latest_messages) %></h3>
+<ul class="related-topics">
+  <% Question.visible.by_date.in_project(@project).limit(5).each do |question| %>
+    <li class="related-topic">
+      <%= link_to h(question.subject), { :controller => 'questions', :action => 'show', :id => question, :project_id => @project } %>
+    </li>
+  <% end %>
+</ul>

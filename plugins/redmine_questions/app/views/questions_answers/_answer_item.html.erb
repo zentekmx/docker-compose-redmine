@@ -1,0 +1,23 @@
+<div class="question answer<%= ' votable' if question_item.allow_voting? %> div-table" id="questions_answer_<%= question_item.id %>">
+  <a href="#<%= question_item.id %>" class="wiki-anchor"></a>
+  <% if question_item.allow_voting? %>
+    <div class="vote" >
+      <%= render :partial => 'questions_votes/question_item_vote', :locals => {:question_item => question_item } %>
+    </div>
+  <% end %>
+
+  <div class="question-container div-table-cell">
+    <%= render :partial => "questions_answers/actions", :locals => { :question_item => question_item } %>
+    <%= avatar(question_item.author, :size => "32") %>
+    <p class="author">
+      <%= link_to_user question_item.author %><br>
+      <%= l(:label_questions_added_time, :value => time_tag(question_item.created_on)).html_safe %>
+    </p>
+    <div class="wiki">
+      <%= textilizable(question_item, :content) %>
+    </div>
+
+    <%= link_to_attachments question_item, :author => false %>
+
+  </div>
+</div>
