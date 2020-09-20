@@ -8,6 +8,7 @@ RUN mkdir -p /bitnami/redmine/public/themes
 RUN ln -sf /usr/share/zoneinfo/America/Mexico_City /etc/localtime
 RUN echo "America/Mexico_City" > /etc/timezone
 
+COPY ./plugins/additionals /opt/bitnami/redmine/plugins/additionals
 COPY ./plugins/redmine_omniauth_saml /opt/bitnami/redmine/plugins/redmine_omniauth_saml
 COPY ./plugins/redmine_xls_export /opt/bitnami/redmine/plugins/redmine_xls_export
 COPY ./plugins/redmine_issues_tree /opt/bitnami/redmine/plugins/redmine_issues_tree
@@ -25,7 +26,7 @@ COPY ./plugins/redmine_lightbox2 /opt/bitnami/redmine/plugins/redmine_lightbox2
 COPY ./plugins/progressive_projects_list /opt/bitnami/redmine/plugins/progressive_projects_list
 COPY ./plugins/circle /opt/bitnami/redmine/public/themes/circle
 COPY ./plugins/highrise /opt/bitnami/redmine/public/themes/highrise
-COPY ./saml.rb /opt/bitnami/redmine/config/saml.rb
+COPY ./saml.rb /opt/bitnami/redmine/config/initializers/saml.rb
 
 RUN bundle config unset deployment
 RUN bundle install
